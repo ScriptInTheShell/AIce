@@ -1,0 +1,534 @@
+Nummer;Kurzbezeichnung;Langbezeichnung;SPT;Stellen
+# GRUA-UNSPEZ.-PERIODEN:;;;;
+103;KOOR;Koordinate des Objekts;POS;
+1031;KOORRW;Koordinate des Objekts-Rechtswert-;POS;7
+1032;KOORHW;Koordinate des Objekts-Hochwert-;POS;7
+1033;KOBMRW;Basismeridian-Koordinate -Rechtswert-;POS;7
+1034;KOBMHW;Basismeridian-Koordinate -Hochwert-;POS;7
+#;;;;
+111;_EDAT;Datum der Erfassung und der letzten Änderung;DAT;
+1111;EDAT;Datum der Erfassung;DAT;10
+1112;ADAT;Datum der letzten Änderung;DAT;10
+#;;;;
+116;GROI;Großinvestitionen;;
+1161;PAKE;Großinvestitionen;KINT;1
+1162;URKU;Großinvestitionen;STR;16
+1163;NOTA;Großinvestitionen;STR;40
+1164;PLZ;Großinvestitionen;NSTR;5
+1165;BMERK;Großinvestitionen;STR;64
+#;;;;
+220;UNGE;Ungewöhnliche oder persönliche Verhältnisse;KINT;
+2201;UNGEAU;Ungewöhnliche oder persönliche Verhältnisse - Ausprägung;KINT;1
+2202;UNGEUS;Ungewöhnliche oder persönliche Verhältnisse - Ursache;KINT;1
+#;;;;
+222;WVGL;Weiterer Vergleichsmaßstäbe;DEZ;
+2221;WVGL1;Weiterer Vergleichsmaßstäbe;DEZ;5.2
+2222;WVGL2;Weiterer Vergleichsmaßstäbe;DEZ;5.2
+2223;WVGL3;Weiterer Vergleichsmaßstäbe;DEZ;5.2
+#;;;;
+224;BOWE;Bodenwertanteil;NINT;9
+2242;BWRENT;Rentierlicher Bodenwertanteil;NINT;9
+2243;BWSONS;Sonstiger Bodenwertanteil;NINT;9
+#;;;;
+226;WMIN;Wertminderung;KINT;
+2261;WMINAU;Wertminderung -Ausprägung;KINT;1
+2262;WMINHO;Wertminderung -Höhe;KINT;3
+#;;;;
+227;WVER;Wertverbesserung;KINT;
+2271;WVERAU;Wertverbesserung -Ausprägung;KINT;1
+2272;WVERHO;Wertverbesserung -Höhe;NINT;3
+#;;;;
+#-------------?deprecated?----------------------
+24221;TEILFL1;Teilflächen -Fläche-;;
+24222;TEILFL2;Teilflächen -Fläche-;;
+24223;TEILFL3;Teilflächen -Fläche-;;
+24224;TEILFL4;Teilflächen -Fläche-;;
+24225;TEILFL5;Teilflächen -Fläche-;;
+24226;TEILFL6;Teilflächen -Fläche-;;
+24227;TEILFL7;Teilflächen -Fläche-;;
+24228;TEILFL8;Teilflächen -Fläche-;;
+#;;;;
+24231;TEILAG1;Teilflächen -Acker-/Grünlandzahl-;;
+24232;TEILAG2;Teilflächen -Acker-/Grünlandzahl-;;
+24233;TEILAG3;Teilflächen -Acker-/Grünlandzahl-;;
+24234;TEILAG4;Teilflächen -Acker-/Grünlandzahl-;;
+24235;TEILAG5;Teilflächen -Acker-/Grünlandzahl-;;
+24236;TEILAG6;Teilflächen -Acker-/Grünlandzahl-;;
+24237;TEILAG7;Teilflächen -Acker-/Grünlandzahl-;;
+24238;TEILAG8;Teilflächen -Acker-/Grünlandzahl-;;
+#;;;;
+24241;TEILBW1;Teilflächen -Bodenwert-;;
+24242;TEILBW2;Teilflächen -Bodenwert-;;
+24243;TEILBW3;Teilflächen -Bodenwert-;;
+24244;TEILBW4;Teilflächen -Bodenwert-;;
+24245;TEILBW5;Teilflächen -Bodenwert-;;
+24246;TEILBW6;Teilflächen -Bodenwert-;;
+24247;TEILBW7;Teilflächen -Bodenwert-;;
+24248;TEILBW8;Teilflächen -Bodenwert-;;
+#;;;;
+24271;TEILRW1;Teilflächen -Rechtswert-;;
+24272;TEILRW2;Teilflächen -Rechtswert-;;
+24273;TEILRW3;Teilflächen -Rechtswert-;;
+24274;TEILRW4;Teilflächen -Rechtswert-;;
+24275;TEILRW5;Teilflächen -Rechtswert-;;
+24276;TEILRW6;Teilflächen -Rechtswert-;;
+24277;TEILRW7;Teilflächen -Rechtswert-;;
+24278;TEILRW8;Teilflächen -Rechtswert-;;
+#;;;;
+24281;TEILHW1;Teilflächen -Hochwert-;;
+24282;TEILHW2;Teilflächen -Hochwert-;;
+24283;TEILHW3;Teilflächen -Hochwert-;;
+24284;TEILHW4;Teilflächen -Hochwert-;;
+24285;TEILHW5;Teilflächen -Hochwert-;;
+24286;TEILHW6;Teilflächen -Hochwert-;;
+24287;TEILHW7;Teilflächen -Hochwert-;;
+24288;TEILHW8;Teilflächen -Hochwert-;;
+#-------------?deprecated?----------------------
+#;;;;
+304;WWUM;Weiterer wertbeeinflussender Umstand;KINT;
+3041;WWUMAU;Weiterer wertbeeinflussender Umstand -Ausprägung;KINT;1
+3042;WWUMUS;Weiterer wertbeeinflussender Umstand -Ursache;KINT;2
+#;;;;
+305;WWML;Weiteres wertbeeinflussendes Merkmal lokaler Art;KINT;
+3051;WWML1;Weiteres wertbeeinflussendes Merkmal lokaler Art 1;KINT;1
+3052;WWML2;Weiteres wertbeeinflussendes Merkmal lokaler Art 2;KINT;1
+3053;WWML3;Weiteres wertbeeinflussendes Merkmal lokaler Art 3;KINT;1
+3054;WWML4;Weiteres wertbeeinflussendes Merkmal lokaler Art 4;KINT;1
+3055;WWML5;Weiteres wertbeeinflussendes Merkmal lokaler Art 5;KINT;1
+#;;;;
+306;FREI;Freies Feld;DEZ;
+3060;FREI1;Freies Feld 1;DEZ;5.2
+3061;FREI2;Freies Feld 2;DEZ;5.2
+3062;FREI3;Freies Feld 3;DEZ;5.2
+3063;FREI4;Freies Feld 4;DEZ;5.2
+3064;FREI5;Freies Feld 5;DEZ;5.2
+3065;FREI6;Freies Feld 6;DEZ;5.2
+3066;FREI7;Freies Feld 7;DEZ;5.2
+3067;FREI8;Freies Feld 8 ;DEZ;5.2
+3068;FREI9;F9 - VKW Zwangsversteigerung;DEZ;5.2
+3069;FREI10;F10 - Grundstücksbreite;DEZ;5.2
+#;;;;
+307;WEIA;Weitere Angaben;STR;60
+3071;WEIA1;Weitere Angaben 1;STR;60
+3072;WEIA2;Weitere Angaben 2;STR;60
+3073;WEIA3;Weitere Angaben 3;STR;60
+3074;WEIA4;Weitere Angaben 4;STR;60
+3075;WEIA5;Weitere Angaben 5;STR;60
+3076;WEIA6;Weitere Angaben 6;STR;60
+3077;WEIA7;Weitere Angaben 7;STR;60
+3078;WEIA8;Weitere Angaben 8;STR;60
+#;;;;
+401;FLAC;Fläche;NINT;7
+4012;FLRENT;Rentierlicher Flächenanteil;NINT;7
+4013;FLSONS;Sonstiger Flächenanteil;NINT;7
+#;;;;
+410;LAGE;Lagemerkmal;KINT;
+4101;LAGE1;Lagemerkmal;KINT;2
+4102;LAGE2;Lagemerkmal;KINT;2
+#;;;;
+422;BODA;Bodenart;KINT;
+4221;BODA1;Bodenart;KINT;4
+4222;BODA2;Bodenart;KINT;4
+#;;;;
+#---------------------------------------------------------------------------
+424;TEIL;Teilflächen bei land- und forstwirtschaftlicher Nutzung;KINT;
+4241;TEILNU;Teilflächen bei land- und forstwirtschaftlicher Nutzung 1;KINT;3
+4242;TEILFL;Teilflächen bei land- und forstwirtschaftlicher Nutzung 2;NINT;7
+4243;TEILAG;Teilflächen bei land- und forstwirtschaftlicher Nutzung 3;NINT;3
+4244;TEILBW;Teilflächen bei land- und forstwirtschaftlicher Nutzung 4;NINT;7
+4245;TEILBO;Teilflächen bei land- und forstwirtschaftlicher Nutzung 5;KINT;4
+4246;TEILFS;Teilflächen bei land- und forstwirtschaftlicher Nutzung 6;FSTR;15
+4247;TEILRW;Teilflächen bei land- und forstwirtschaftlicher Nutzung 7;POS;7
+4248;TEILHW;Teilflächen bei land- und forstwirtschaftlicher Nutzung 8;POS;7
+#;;;;
+42411;TEILNU1;Teilflächen -Nutzung-;KINT;3
+42412;TEILNU2;Teilflächen -Nutzung-;KINT;3
+42413;TEILNU3;Teilflächen -Nutzung-;KINT;3
+42414;TEILNU4;Teilflächen -Nutzung-;KINT;3
+42415;TEILNU5;Teilflächen -Nutzung-;KINT;3
+42416;TEILNU6;Teilflächen -Nutzung-;KINT;3
+42417;TEILNU7;Teilflächen -Nutzung-;KINT;3
+42418;TEILNU8;Teilflächen -Nutzung-;KINT;3
+#;;;;
+42421;TEILFL1;Teilflächen-Fläche;NINT;7
+42422;TEILFL2;Teilflächen-Fläche;NINT;7
+42423;TEILFL3;Teilflächen-Fläche;NINT;7
+42424;TEILFL4;Teilflächen-Fläche;NINT;7
+42425;TEILFL5;Teilflächen-Fläche;NINT;7
+42426;TEILFL6;Teilflächen-Fläche;NINT;7
+42427;TEILFL7;Teilflächen-Fläche;NINT;7
+42428;TEILFL8;Teilflächen-Fläche;NINT;7
+#;;;;
+42431;TEILAG1;Teilflächen-Acker_Gruen;NINT;3
+42432;TEILAG2;Teilflächen-Acker_Gruen;NINT;3
+42433;TEILAG3;Teilflächen-Acker_Gruen;NINT;3
+42434;TEILAG4;Teilflächen-Acker_Gruen;NINT;3
+42435;TEILAG5;Teilflächen-Acker_Gruen;NINT;3
+42436;TEILAG6;Teilflächen-Acker_Gruen;NINT;3
+42437;TEILAG7;Teilflächen-Acker_Gruen;NINT;3
+42438;TEILAG8;Teilflächen-Acker_Gruen;NINT;3
+#;;;;
+42441;TEILBW1;Teilflächen-BW;NINT;7
+42442;TEILBW2;Teilflächen-BW;NINT;7
+42443;TEILBW3;Teilflächen-BW;NINT;7
+42444;TEILBW4;Teilflächen-BW;NINT;7
+42445;TEILBW5;Teilflächen-BW;NINT;7
+42446;TEILBW6;Teilflächen-BW;NINT;7
+42447;TEILBW7;Teilflächen-BW;NINT;7
+42448;TEILBW8;Teilflächen-BW;NINT;7
+#;;;;
+42451;TEILBO1;Teilflächen-BG;KINT;4
+42452;TEILBO2;Teilflächen-BG;KINT;4
+42453;TEILBO3;Teilflächen-BG;KINT;4
+42454;TEILBO4;Teilflächen-BG;KINT;4
+42455;TEILBO5;Teilflächen-BG;KINT;4
+42456;TEILBO6;Teilflächen-BG;KINT;4
+42457;TEILBO7;Teilflächen-BG;KINT;4
+42458;TEILBO8;Teilflächen-BG;KINT;4
+#;;;;
+42461;TEILFS1;Teilflächen -Flurstück-;FSTR;15
+42462;TEILFS2;Teilflächen -Flurstück-;FSTR;15
+42463;TEILFS3;Teilflächen -Flurstück-;FSTR;15
+42464;TEILFS4;Teilflächen -Flurstück-;FSTR;15
+42465;TEILFS5;Teilflächen -Flurstück-;FSTR;15
+42466;TEILFS6;Teilflächen -Flurstück-;FSTR;15
+42467;TEILFS7;Teilflächen -Flurstück-;FSTR;15
+42468;TEILFS8;Teilflächen -Flurstück-;FSTR;15
+#;;;;
+42471;TEILRW1;Teilflächen-RW;POS;7
+42472;TEILRW2;Teilflächen-RW;POS;7
+42473;TEILRW3;Teilflächen-RW;POS;7
+42474;TEILRW4;Teilflächen-RW;POS;7
+42475;TEILRW5;Teilflächen-RW;POS;7
+42476;TEILRW6;Teilflächen-RW;POS;7
+42477;TEILRW7;Teilflächen-RW;POS;7
+42478;TEILRW8;Teilflächen-RW;POS;7
+#;;;;
+42481;TEILHW1;Teilflächen-HW8;POS;7
+42482;TEILHW2;Teilflächen-HW8;POS;7
+42483;TEILHW3;Teilflächen-HW8;POS;7
+42484;TEILHW4;Teilflächen-HW8;POS;7
+42485;TEILHW5;Teilflächen-HW8;POS;7
+42486;TEILHW6;Teilflächen-HW8;POS;7
+42487;TEILHW7;Teilflächen-HW8;POS;7
+42488;TEILHW8;Teilflächen-HW8;POS;7
+#---------------------------------------------------------------------------
+#;;;;
+441;VERP;Verpachtung;;
+4411;VERPAU;Verpachtung -Ausprägung;KINT;1
+4412;VERPPA;Verpachtung -Pacht;DEZ;5.2
+#;;;;
+512;KGES;Kellergeschoss;;
+5121;KGESUN;Kellergeschoss -Unterkellerung;NINT;3
+5122;KGESAU;Kellergeschoss -Aufenthaltsräume;NINT;3
+#;;;;
+513;DGES;Dachgeschossausbau;;
+5131;DGESAU;Dachgeschossausbau -Ausprägung;KINT;1
+5132;DGESAN;Dachgeschossausbau -Anteil;NINT;3
+#;;;;
+518;ANNU;Art und Anteil an der gewerblichen Nutzfläche;;
+#ANNU1;;;;
+5181;ANNUAR1;Art und Anteil an der gewerblichen Nutzfläche;KINT;1
+5182;ANNUAN1;Art und Anteil an der gewerblichen Nutzfläche;NINT;3
+#ANNU2;;;;
+5183;ANNUAR2;Art und Anteil an der gewerblichen Nutzfläche;KINT;1
+5184;ANNUAN2;Art und Anteil an der gewerblichen Nutzfläche;NINT;3
+#ANNU3;;;;
+5185;ANNUAR3;Art und Anteil an der gewerblichen Nutzfläche;KINT;1
+5186;ANNUAN3;Art und Anteil an der gewerblichen Nutzfläche;NINT;3
+#ANNU4;;;;
+5187;ANNUAR4;Art und Anteil an der gewerblichen Nutzfläche;KINT;1
+5188;ANNUAN4;Art und Anteil an der gewerblichen Nutzfläche;NINT;3
+#;;;;
+519;SOFL;Sonstige Nutzfläche;;
+5191;SOFLAU;Sonstige Nutzfläche -Ausprägung;KINT;1
+5192;SOFLFL;Sonstige Nutzfläche -Fläche;NINT;4
+#;;;;
+527;WGGA;Weitere Gebäude -Gebäudeart-;KINT;
+5271;WGGA1;Weitere Gebäude -Gebäudeart- 1;KINT;3
+5272;WGGA2;Weitere Gebäude -Gebäudeart- 2;KINT;3
+5273;WGGA3;Weitere Gebäude -Gebäudeart- 3;KINT;3
+5274;WGGA4;Weitere Gebäude -Gebäudeart- 4;KINT;3
+5275;WGGA5;Weitere Gebäude -Gebäudeart- 5;KINT;3
+#;;;;
+528;WGGR;Weitere Gebäude -Grundfläche-;NINT;
+5281;WGGR1;Weitere Gebäude -Grundfläche- 1;NINT;5
+5282;WGGR2;Weitere Gebäude -Grundfläche- 2;NINT;5
+5283;WGGR3;Weitere Gebäude -Grundfläche- 3;NINT;5
+5284;WGGR4;Weitere Gebäude -Grundfläche- 4;NINT;5
+5285;WGGR5;Weitere Gebäude -Grundfläche- 5;NINT;5
+#;;;;
+529;WGGE;Weitere Gebäude -Geschosszahl-;NINT;
+5291;WGGE1;Weitere Gebäude -Geschosszahl- 1;NINT;2
+5292;WGGE2;Weitere Gebäude -Geschosszahl- 2;NINT;2
+5293;WGGE3;Weitere Gebäude -Geschosszahl- 3;NINT;2
+5294;WGGE4;Weitere Gebäude -Geschosszahl- 4;NINT;2
+5295;WGGE5;Weitere Gebäude -Geschosszahl- 5;NINT;2
+#;;;;
+530;WGBJ;Weitere Gebäude -Baujahr-;JINT;
+5301;WGBJ1;Weitere Gebäude -Baujahr- 1;JINT;4
+5302;WGBJ2;Weitere Gebäude -Baujahr- 2;JINT;4
+5303;WGBJ3;Weitere Gebäude -Baujahr- 3;JINT;4
+5304;WGBJ4;Weitere Gebäude -Baujahr- 4;JINT;4
+5305;WGBJ5;Weitere Gebäude -Baujahr- 5;JINT;4
+#;;;;
+531;WGQU;Weitere Gebäude -Gebäudequalität-;KINT;
+5311;WGQU1;Weitere Gebäude -Gebäudequalität- 1;KINT;1
+5312;WGQU2;Weitere Gebäude -Gebäudequalität- 2;KINT;1
+5313;WGQU3;Weitere Gebäude -Gebäudequalität- 3;KINT;1
+5314;WGQU4;Weitere Gebäude -Gebäudequalität- 4;KINT;1
+5315;WGQU5;Weitere Gebäude -Gebäudequalität- 5;KINT;1
+#;;;;
+552;VERM;Vermietung Eigentumswohnung;;
+5521;VERMAU;Vermietung Eigentumswohnung -Ausprägung;KINT;1
+5522;VERMMI;Vermietung Eigentumswohnung -Miete;DEZ;2.2
+#;;;;
+560;FORD;Förderung mit öffentlichen Mitteln;KINT;
+5601;FORDAU;Förderung mit öffentlichen Mitteln -Ausprägung;KINT;1
+5602;FORDJA;Förderung mit öffentlichen Mitteln -Jahre der restlichen Mietpreisbindung;KINT;2
+#;;;;
+575;ENER;Energieausweis;KINT;
+5751;ENERAU;Energieausweis -Ausprägung;KINT;1
+5752;ENEREB;Energieausweis -Endenergieverbrauchskennwert oder Endenergiebedarf;NINT;3
+#;;;;
+584;WGSW;Weitere Gebäude - Sachwert 2010-;NINT;
+5841;WGSW1;Weitere Gebäude - Sachwert 2010- 1;NINT;9
+5842;WGSW2;Weitere Gebäude - Sachwert 2010- 2;NINT;9
+5843;WGSW3;Weitere Gebäude - Sachwert 2010- 3;NINT;9
+5844;WGSW4;Weitere Gebäude - Sachwert 2010- 4;NINT;9
+5845;WGSW5;Weitere Gebäude - Sachwert 2010- 5;NINT;9
+#;;;;
+585;WGGT;Weitere Gebäude - Gebäudetyp -;KSTR;
+5851;WGGT1;Weitere Gebäude - Gebäudetyp - 1;KSTR;6
+5852;WGGT2;Weitere Gebäude - Gebäudetyp - 2;KSTR;6
+5853;WGGT3;Weitere Gebäude - Gebäudetyp - 3;KSTR;6
+5854;WGGT4;Weitere Gebäude - Gebäudetyp - 4;KSTR;6
+5855;WGGT5;Weitere Gebäude - Gebäudetyp - 5;KSTR;6
+#;;;;
+586;WGRD;Weitere Gebäude - Restnutzungsdauer -;NINT;
+5861;WGRD1;Weitere Gebäude - Restnutzungsdauer - 1;NINT;3
+5862;WGRD2;Weitere Gebäude - Restnutzungsdauer - 2;NINT;3
+5863;WGRD3;Weitere Gebäude - Restnutzungsdauer - 3;NINT;3
+5864;WGRD4;Weitere Gebäude - Restnutzungsdauer - 4;NINT;3
+5865;WGRD5;Weitere Gebäude - Restnutzungsdauer - 5;NINT;3
+#;;;;
+587;WGDF;Weitere Gebäude - Dachform -;KINT;
+5871;WGDF1;Weitere Gebäude - Dachform - 1;KINT;1
+5872;WGDF2;Weitere Gebäude - Dachform - 2;KINT;1
+5873;WGDF3;Weitere Gebäude - Dachform - 3;KINT;1
+5874;WGDF4;Weitere Gebäude - Dachform - 4;KINT;1
+5875;WGDF5;Weitere Gebäude - Dachform - 5;KINT;1
+#;;;;
+588;WGBF;Weitere Gebäude - Bruttogrundfläche -;NINT;
+5881;WGBF1;Weitere Gebäude - Bruttogrundfläche - 1;NINT;7
+5882;WGBF2;Weitere Gebäude - Bruttogrundfläche - 2;NINT;7
+5883;WGBF3;Weitere Gebäude - Bruttogrundfläche - 3;NINT;7
+5884;WGBF4;Weitere Gebäude - Bruttogrundfläche - 4;NINT;7
+5885;WGBF5;Weitere Gebäude - Bruttogrundfläche - 5;NINT;7
+#;;;;
+589;WGST;Weitere Gebäude - Standardstufe -;DEZ;
+5891;WGST1;Weitere Gebäude - Standardstufe - 1;DEZ;1.1
+5892;WGST2;Weitere Gebäude - Standardstufe - 2;DEZ;1.1
+5893;WGST3;Weitere Gebäude - Standardstufe - 3;DEZ;1.1
+5894;WGST4;Weitere Gebäude - Standardstufe - 4;DEZ;1.1
+5895;WGST5;Weitere Gebäude - Standardstufe - 5;DEZ;1.1
+#;;;;
+590;WGKK;Weitere Gebäude - Normalherstellungskosten -;NINT;
+5901;WGKK1;Weitere Gebäude - Normalherstellungskosten - 1;NINT;4
+5902;WGKK2;Weitere Gebäude - Normalherstellungskosten - 2;NINT;4
+5903;WGKK3;Weitere Gebäude - Normalherstellungskosten - 3;NINT;4
+5904;WGKK4;Weitere Gebäude - Normalherstellungskosten - 4;NINT;4
+5905;WGKK5;Weitere Gebäude - Normalherstellungskosten - 5;NINT;4
+#;;;;
+597;WGNF;Weitere Gebäude – Nutzfläche -;NINT;
+5971;WGNF1;Weitere Gebäude – Nutzfläche - 1;NINT;6
+5972;WGNF2;Weitere Gebäude – Nutzfläche - 2;NINT;6
+5973;WGNF3;Weitere Gebäude – Nutzfläche - 3;NINT;6
+5974;WGNF4;Weitere Gebäude – Nutzfläche - 4;NINT;6
+5975;WGNF5;Weitere Gebäude – Nutzfläche - 5;NINT;6
+#;;;;
+101;KFKZ;Kauffallkennzeichen;FSTR;13
+102;STAT;Status;KINT;1
+104;GEME;Gemeindeteil;NSTR;7
+105;GEMA;Gemarkung;NSTR;6
+106;FLUR;Flurstücksbezeichnung;FSTR;15
+107;LABE;Lagebezeichnung;STR;25
+108;STSC;Straßenschlüssel;STR;5
+109;HAUS;Hausnummer;FSTR;8
+110;BRZO;Bodenrichtwertzone;NSTR;8
+112;AFTN;Aufteilungsplannummer;STR;20
+113;BEPL;Bebauungsplan;STR;80
+114;VERW;Verwendung bzw. Eignung;KSTR;1
+115;RTYP;Regionstyp;KINT;1
+132;DST;Dienststellennummer;NSTR;3
+133;GEDE;Gemeinde;NINT;8
+201;DATU;Datum des Vertrages;DAT;10
+202;DABE;Datum des Bezugszeitpunktes;DAT;10
+203;BEMP;Beginn des Miet-/Pachtverhältnisses;DAT;10
+204;ENMP;Ende des Miet-/Pachtverhältnisses;DAT;10
+205;ANLA;Anlass des Eigentumsübergangs;KINT;2
+206;AREI;Vertragsart bei Wohnungs-/Teileigentum;KINT;1
+207;MIEI;Miteigentumsanteil;NINT;5
+208;VERA;Veräußerer;KINT;2
+209;ERWE;Erwerber;KINT;2
+210;VERL;Veräußerer Landwirtschaft;KINT;1
+211;ERWL;Erwerber Landwirtschaft;KINT;1
+212;VEMI;Vermieter;KINT;2
+213;MIET;Mieter;KINT;2
+214;VELA;Verpächter Landwirtschaft;KINT;1
+215;PALA;Pächter Landwirtschaft;KINT;1
+216;PREI;Kaufpreis;NINT;9
+217;ENTK;Entstehung des Kaufpreises;KINT;2
+218;TENT;Text zur Entstehung des Kaufpreises;STR;60
+219;BPRE;Besonderheit bei der Preisvereinbarung;KINT;1
+221;VERG;Vergleichsmaßstab;DEZ;5.2
+225;PRBE;Preisanteil für den Bestand;DEZ;3.2
+228;NEKA;Nettokaltmiete;NINT;6
+229;BPAZ;Bruttopachtzins;NINT;6
+230;VGMP;Vergleichsmaßstab Miete/Pacht;DEZ;5.2
+231;ARMI;Art des Miet-/Pachtverhältnisses;KINT;1
+232;MIAN;Quelle der Mietangabe;KINT;2
+301;GRUA;Preisbestimmende Grundstücksart;KINT;3
+302;GEMV;Gegenstand des Mietvertrages;KINT;2
+303;SELB;Objektselbstständigkeit;KINT;1
+381;GRTX;Text zur Grundstücksart;STR;32
+402;GBRE;Grundstücksbreite;NINT;4
+403;FORR;Form/Regelmäßigkeit;NINT;1
+406;BAUG;Baugrund;NINT;1
+407;ECKE;Ecklage;BOOL;1
+408;BAUL;Baulücke;BOOL;1
+409;HINT;Hinterland;BOOL;1
+411;LQUA;Lagequalität;KINT;1
+416;BRWB;Bodenrichtwert Bauland;DEZ;5.2
+417;BRGR;Bodenrichtwert Bauland –regelmäßige Grundstückseigenschaften-;STR;64
+418;BRBZ;Bodenrichtwert Bauland -beitragsrechtlicher Zustand-;KINT;1
+420;ACZA;Ackerzahl;NINT;3
+421;GRZA;Grünlandzahl;NINT;3
+423;ALTB;Alter des Bestandes;NINT;3
+425;BRWL;Bodenrichtwert Landwirtschaft;DEZ;5.2
+426;BRLG;Bodenrichtwert Landwirtschaft -Grundstückseigenschaften-;STR;64
+427;ZBER;Zulässigkeitsbereich;KINT;2
+428;ENTW;Entwicklungszustand;KINT;1
+429;BEIT;Beitragsrechtlicher Zustand;KINT;1
+430;ZNUT;Zulässige Art der baulichen Nutzung;KSTR;3
+431;BAUW;Bauweise;KINT;2
+432;ZGEZ;Zulässige Geschosszahl;NINT;2
+433;ZGRZ;Zulässige Grundflächenzahl;DEZ;1.2
+434;ZGFZ;Zulässige Geschossflächenzahl;DEZ;1.2
+435;ZBMZ;Zulässige Baumassenzahl;DEZ;1.1
+436;VERF;Verfahrensgebiet;KINT;1
+437;GNUT;Geplante Nutzung;KINT;2
+438;NUTV;Nutzung vorher;STR;48
+439;NUTN;Nutzung nachher;STR;48
+440;BOSA;Bodenschatz;DEZ;2.2
+442;WGFZ;Wertrelevante Geschossflächenzahl;DEZ;1.2
+501;GEBA;Gebäudeart;KINT;3
+502;KGEB;Kennziffer Gebäudeart;KINT;1
+503;STEL;Stellung des Gebäudes;KINT;1
+504;BAUJ;Baujahr;JINT;4
+505;BAUV;Jahr baulicher Veränderung;JINT;4
+506;RNDA;Restnutzungsdauer;NINT;3
+507;KONS;Gebäudekonstruktion;KINT;2
+508;AMAU;Aufbau der Außenmauern;KINT;1
+509;FASS;Fassade;KINT;1
+510;DACH;Dachform;KINT;1
+511;VGES;Zahl der oberirdischen Vollgeschosse;NINT;2
+514;GRFL;Gebäudegrundfläche;NINT;5
+515;GEFL;Geschossfläche;NINT;5
+516;WOFL;Wohnfläche;NINT;5
+517;NUFL;Gewerbliche Nutzfläche;NINT;6
+520;GEHO;Geschosshöhe;DEZ;2.1
+521;URAU;Umbauter Raum;NINT;5
+522;ZAWO;Zahl der Einheiten;NINT;4
+523;LEER;Zahl der leerstehenden Wohnungen;NINT;3
+524;GARI;Garagen im Gebäude;NINT;3
+525;GARA;Garagen als Nebengebäude;NINT;3
+526;STEA;Einstellplätze außerhalb des Gebäudes;NINT;3
+532;AUSS;Außenanlagen;KINT;1
+534;HEIZ;Beheizung;KINT;1
+535;ENAR;Energieart;KINT;2
+537;SBAD;Sanitäre Anlagen - Bäder -;KINT;1
+538;TOIL;Sanitäre Anlagen - Toiletten -;KINT;1
+539;QSAN;Qualität der sanitären Anlagen;KINT;1
+540;FENS;Fenster;KINT;1
+544;KUCH;Einbauküche;BOOL;1
+545;KAMI;Kamin/Kachelofen;KINT;1
+546;SAUN;Sauna;BOOL;1
+547;SCHW;Schwimmbad;KINT;1
+548;FAHR;Fahrstuhl;BOOL;1
+549;STOC;Stockwerk;KINT;2
+550;ZIMM;Zahl der Zimmer;NINT;1
+551;BALK;Balkon/Terrasse;KINT;1
+553;UMBP;Preis pro m3 umbauten Raumes (1913);DEZ;2.2
+554;SACH;Sachwert;NINT;8
+555;JMIE;Jahresnettokaltmiete;NINT;8
+556;BRMI;Jahresbruttokaltmiete;NINT;8
+557;GEMI;Gewerblicher Mietanteil;NINT;3
+558;REIN;Jahresreinertrag;NINT;8
+559;ERTR;Ertragswert;NINT;8
+561;BGFL;Brutto-Grundfläche;NINT;7
+562;NHKO;Normalherstellungskosten 2000;NINT;6
+563;SW00;Sachwert 2000;NINT;9
+564;REGI;Regionalfaktor;DEZ;1.1
+565;BRIH;Brutto-Rauminhalt;NINT;7
+566;ASTD;Ausstattungsstandard;KINT;1
+567;GTYP;Gebäudetyp;KSTR;6
+568;LIZI;Liegenschaftszins;DEZ;2.2
+569;ROFA;Rohertragsfaktor;DEZ;2.2
+570;WEAU;Wert der Außenanlagen;NINT;6
+571;OPED;Optischer Eindruck;KINT;1
+572;BAVE;Bauliche Veränderung;KSTR;48
+573;BAUM;Baumängel / Bauschäden;KINT;1
+574;CAPO;Carport;NINT;3
+576;FOTO;Anzahl der Kauffallfotos;NINT;2
+577;SW10;Sachwert;NINT;9
+578;STST;Standardstufe;DEZ;1.1
+579;KOWT;Normalherstellungskosten 2010;NINT;4
+580;MODG;Modernisierungsgrad;NINT;2
+581;DREM;Drempelhöhe;DEZ;1.1
+582;BAUT;Besondere Bauteile;NINT;6 
+583;KFGB;Korrekturfaktor Gebäudegeometrie;DEZ;2.1
+591;BJMO;Modifiziertes Baujahr;NINT;4
+592;ENSK;Sekundäre Energie;KINT;1
+593;BJAT;Baujahr der Anlagentechnik;NINT;4
+594;GT10;Gebäudetyp 2010;KSTR;6
+595;GRBA;Grundriss/Barrierefreiheit;KINT;1
+596;GBTX;Text zur Gebäudeart;KSTR;64
+599;TAXO;Taxonomie der Wirtschaftsimmodbilien-;KINT;4
+601;VART;Vertragsart;KINT;1
+602;ERBB;Erbbauberechtigter;KINT;1
+603;ERBG;Erbbaurechtsgeber;KINT;1
+604;ERJA;Jahr des Erbbaurechtsvertrages;JINT;4
+605;LAUF;Laufzeit des Erbbaurechtsvertrages;NINT;3
+606;EZWE;Zweckbestimmung des Erbbaurechtsvertrages;KINT;1
+607;VZIN;Erbbauzinsen nach Vertrag;DEZ;3.2
+608;TZIN;Tatsächliche Erbbauzinsen;DEZ;3.2
+609;ANPA;Anpassungsklausel;KINT;1
+610;HEIM;Heimfallbestimmung;BOOL;1
+611;ERBZ;Erbbauzins in Prozent;DEZ;2.2
+612;JEAP;Jahr der Erbbauzinsanpassung;JINT;4
+613;ENRE;Entschädigungsregelungen des Erbbaurechtsvertrages;KINT;1
+614;VWUG;Vergleichswert des unbelasteten Grundstücks;NINT;9
+0614;SWNE;Neue Bez. VWUG;NINT;9
+615;REST;Restlaufzeit des Erbbaurechts;NINT;3
+730;KPWOFL;Normierter Kaufpreis / Wohnfläche;DEZ;5.2
+731;KPWONU;Normierter Kaufpreis / (Wohn- und Nutzfläche);DEZ;5.2
+732;KPBGFL;Normierter Kaufpreis / Bruttogrundfläche;DEZ;5.2
+733;KPBRIH;Normierter Kaufpreis / Bruttorauminhalt;DEZ;5.2
+734;KPSW00;Normierter Kaufpreis / Sachwert 2000;DEZ;5.2
+735;KBWOFL;(Normierter Kaufpreis – Bodenwert) / Wohnfläche;DEZ;5.2
+736;KBWONU;(Normierter Kaufpreis – Bodenwert) / (Wohn- und Nutzfläche);DEZ;5.2
+737;KBBGFL;(Normierter Kaufpreis – Bodenwert) / Bruttogrundfläche;DEZ;5.2
+738;KBBRIH;(Normierter Kaufpreis – Bodenwert) / Bruttorauminhalt;DEZ;5.2
+739;PREINO;Normierter Kaufpreis;NINT;9
+740;KPNUFL;Normierter Kaufpreis / Nutzfläche;DEZ;5.2
+741;KPSW10;Normierter Kaufpreis / Sachwert 2010;DEZ;5.2
+742;ERBFAK;Erbbaurechtsfaktor;DEZ;5.2
+#;;;;
+#;NEU;;;
+705;BJMZ;modifiziertes Baujahr 2026;JINT;4
+706;RNDZ;Restnutzungsdauer 2026;NINT;3
+707;SW26;Sachwert 2026;NINT;9
+708;RFAK;Regionalfaktor ImmoWertV;DEZ;1.1
+709;LIEZ;Liegenschaftszins 2026;DEZ;2.2
+745;KPSW26;norm. Kaufpreis / Sachwert 2026;DEZ;5.2
