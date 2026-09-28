@@ -9,7 +9,7 @@
 #-----------------------
 # AKS-SELEKTIONSANSATZ | 
 #----------------------
-# Version:      1.0.0-beta
+# Version:      1.0.1-beta
 # Author:       Dr. Maximilian Hanusch
 # Maintainer:   Dr. Maximilian Hanusch  ~  "maximilian.hanusch@lkprignitz.de"
 #
