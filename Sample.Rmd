@@ -1,0 +1,115 @@
+---
+title: "Sample"
+author: "Dr. Maximilian Hanusch"
+date: "2026-09-21"
+output: html_document
+---
+#### Vorbereitung:
+Bevor der Code benutzt werden kann, müssen in 
+
+```{r}
+print(paste0(getwd(),"/aice/data/Kauffalldaten"))
+```
+
+entsprechende Kauffalldaten abgelegt werden (vgl. "aiceHowTo.pdf"). 
+
+#### Initialisieren:
+
+```{r Initialisieren, include=TRUE}
+  # aufräumen:
+    rm(list=ls())
+    gc()
+  # AICE einbinden:
+    source("aice/aice.R")
+  # AICE-Objekt erstellen; und Daten laden:
+    mein_aice <- aice.rc$new(TRUE)
+```
+
+#### Datumsfilter setzen:
+
+```{r Filter setzen, include = TRUE}
+  # Parameter definieren:
+    JAHR     <- 2025
+    datRange <- paste0("01.01.",(JAHR-1),":","31.12.", JAHR)
+  #
+  # NULL-ASEL-Objekt zum filtern erstellen: 
+    fltr_asel <- asel.rc$new(NULL)
+  # Datumsfilter definieren:
+    fltr_asel$addSepa("DATU", datRange)
+  #
+  # Filter setzen: 
+  # Da keine GRUA im ASEL festgelegt ist, wird der Filter für alle GRUAs gesetzt:
+    mein_aice$setFltr(fltr_asel)
+```
+
+#### Nun in der Grundstücksart "bb" via abgespeichertem  Selektionsansatz selektieren:
+
+Sample-Selektionsansatz per Hand laden und anschauen, dann hiermit selektieren:
+
+```{r}
+  # ASEL erzeugen und Selektionsansatz laden:
+    sample_asel <- asel.rc$new(paste0(getwd(),"/aice/data/Selektionsansaetze/Testansatz_bb.csv"))
+  # geladenen Ansatz anschauen:
+    sample_asel$prtSela()
+  # via Ansatz selektieren:
+    df <- mein_aice$select(sample_asel)
+```
+
+Sample-Selektionsansatz via Open-Dialog auswählen und gleichzeitig damit selektieren:
+
+```{r}
+df <- mein_aice$select("")
+```
+
+#### Per Hand in der Grundstücksart "bb" selektieren:
+
+In welchen Kauffällen wurde bei der Erfassung *SW23* in das falsche WEIA-Feld eingetragen?:
+
+
+```{r}
+# Neues ASEL erstellen und die GRUA "bb" zuweisen:
+  mein_asel <- asel.rc$new("bb")
+```
+
+##### METHODE 1:
+
+```{r}
+# Kauffälle, die irgendwo in WEIA den Teilstring "SW23" stehen haben:
+  mein_asel$addSepa("WEIA", "*SW23*")
+  df_SW23_1 <- mein_aice$select(mein_asel)
+# Kauffälle, die in WEIA7 den Teilstring "SW23" stehen haben:
+#   Da bereits ein Selektionskriterium im ASEL festgelegt ist, müssen wir es überschreiben
+#   - deswegen die '1' im dritten Slot.
+  mein_asel$addSepa("WEIA7", "*SW23*", 1)
+  df_SW23_2 <- mein_aice$select(mein_asel)
+# Differenz:
+  diff <- abs(nrow(df_SW23_1) - nrow(df_SW23_2))
+  if (diff != 0) {
+    print(paste0("Es wurde ", diff, " mal 'SW23' in das falsche WEIA-Feld eingetragen; und zwar in den folgenden Kauffällen:"))
+    print(setdiff(df_SW23_1$KFKZ, df_SW23_2$KFKZ))
+  } else {
+    print("Alles ist gut.")
+  }
+```
+
+##### METHODE 2:
+
+```{r}
+# ASEL bereinigen:
+  mein_asel$clear()
+  mein_asel$setGrua("bb")
+#  
+# Kauffälle, die irgendwo in WEIA den Teilstring "SW23" stehen haben:
+  mein_asel$addSepa("WEIA", "*SW23*")
+  # Kauffälle, die NICHT in WEIA7 den Teilstring "SW23" stehen haben:
+  mein_asel$addSepa("WEIA7", "<>(*SW23*)")
+  #
+  # Wie man sieht, wurden 2 Kriterien (Sepas) festgelegt:
+  mein_asel$prtSela()
+  # Diese werden nun von AICE via 'UND' verknüpft: 
+  #
+  df_SW23_diff <- mein_aice$select(mein_asel)
+  #
+  print(df_SW23_diff$KFKZ)
+```
+
