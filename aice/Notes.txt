@@ -1,0 +1,21 @@
+[[1]] Datenhandling:
+
+ [A] ELEMENTEKATALOG:
+     In "aice\meta" liegen die Katalogdateien. Diese setzen die Kurzbezeichnungen der Elemente mit deren ID in Beziehung.
+     Zudem ist fuer jedes Element, dessen "Datentyp" hinterlegt (SPT = SelektionsParameterTyp ~ AIce interner Kennzeichner).
+     Schließlich gibt es noch das Singleton-Flag, welches diejenigen Periodenhauptelemente via "1" markiert, die selbst auch 
+     belegt sein koennen (FLAC, BOWE). Diese werden im Kontext von Selektionen als ganz normale eigenstaendige Felder behandelt 
+     (d.h., es wird NICHT via ODER ueber deren Perioden-Unterelemente getestet).		
+
+ [B] CLEANUP:
+
+ [a] Die AKS haelt wohl historische Elementefelder wie "WGWB" (bzw. "WGWB1",...,"WGWB5"), die nicht mehr befuellt 
+     werden koennen, aber beim Export in der CSV auftauchen ~ und dann einen "Rechtsshift" im Datensatz verursachen. 
+     ~ Diese Verschiebungen werden in func_aice_load_Data(...) per default mit dem Flag "NoGhosts = TRUE" beim LAaden automatisch korrigiert.
+     ~ Diese werden in den "Geister"-CSV-Dateien im Ordner "aice/meta/DataCleanups" hinterlegt. 
+
+ [b] Die AKS exportiert manche Felder im falschen Format; zumindest jedenfalls "ZGEZ" bei "ub" und "sf".
+     Dies ist ein Integer-Feld, welches als Dezimalzahl mit zusaetzlichen zwei 0-Nachkommastellen exportiert wird.
+     ~ Dies wird in func_aice_load_Data(...) per default mit dem Flag "TypeRepair = TRUE" beim Laden automatisch korrigiert.
+     ~ Die Felder zusammen mit der entsprechenden Korrekturoperation werden in den "TypeRepair"-CSV-Dateien im Ordner 
+       "aice/meta/DataCleanups" hinterlegt. 
