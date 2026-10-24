@@ -26,4 +26,4 @@
 ~ Die Methode aice.rc$selectSelda(...) wurde hinzugefuegt. Sie erlaubt es nun direkt aus bereits getaetigten Selektionen
   nachzuselektiern (aehnlich wie bei Filtern).
 
-~ Zu AIce bzw. ASel wurden Methoden wie reset, reduce, clear, clone, merge ... hinzugefuegt - siehe AIceHowTo.pdf.
+~ Zu AIce bzw. ASel wurden Methoden wie reset, reduce, clear, clone, merge ... hinzugefuegt - siehe AIceHowTo.html.
