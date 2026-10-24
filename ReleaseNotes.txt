@@ -1,0 +1,29 @@
+-------------------------------------------------------------------
+| Wichtigste Aenderungen (Details siehe AIceHowTo.pdf bzw. Code): |
+-------------------------------------------------------------------
+
+~ checkData(...) prueft auf Typecastfehler, die u.U. auf mögliche Fehlbelegungen von Feldern hinweisen 
+  (die entsprechenden Elemente, Werte und Kauffallnummern werden in der Konsole ausgegeben).
+
+~ Beim Laden der exportierten Kauffalldaten wird nun in jeder Grundstuecksart der jeweils aktuellste 
+  (Aenderungsdatum) ausgewaehlt. Es duerfen sich nun also mehrere Exportdatensaetze im enstprechenden 
+  "Datenordner" befinden.
+
+~ Will man einen Selektionsansatz via Open_Dialog laden, so heisst es nun 
+       		asel.rc$new("")   anstelle    asel.rc$new()
+  asel.rc$new() ist nun gleichbedeutend mit asel.rc$new(NULL) bzw. asel.rc$new(NA) (leerer ASel ohne festgelegte GRUA).
+
+~ Beim Laden von Selektionsansaetzen wird nun die AKS-Doktrin "NICHTS/NA ist kleiner und ungleich jedem Wert" beruecksichtigt.
+  Will man im R-Skript diesen Style verwenden, so kann man bei asel.rc$addSepa(...) das Flag AKS = TRUE setzen oder den 
+  "Wrapper" asel.rc$aksSepa(...) verwenden.
+
+~ Mit Hilfe des '%'-Zeichens kann man den Dateinamen von Selektionsansaetzen nun flexibler benennen. 
+
+~ Man kann nun auch Selektionstabellen laden - bspw. eine Liste von KFKZ - vgl. asel.rc$loadSela(...).    
+
+~ Die Methode aice.rc$checkWrongs(...) wurde hinzugefuegt. Sie gibt Auskunft ueber die negativ selektierten Kauffaelle.
+
+~ Die Methode aice.rc$selectSelda(...) wurde hinzugefuegt. Sie erlaubt es nun direkt aus bereits getaetigten Selektionen
+  nachzuselektiern (aehnlich wie bei Filtern).
+
+~ Zu AIce bzw. ASel wurden Methoden wie reset, reduce, clear, clone, merge ... hinzugefuegt - siehe AIceHowTo.pdf.

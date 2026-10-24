@@ -1,0 +1,171 @@
+---
+title: "Sample"
+author: "Dr. Maximilian Hanusch"
+date: "2026-10-24"
+format: html
+editor: visual
+---
+
+### **Vorbereitung:**
+
+Bevor der Code benutzt werden kann, müssen in
+
+```{r}
+print(paste0(getwd(),"/aice/data/Kauffalldaten"))
+```
+
+entsprechende Kauffalldaten abgelegt werden (vgl. "aiceHowTo.pdf").
+
+### **Initialisieren:**
+
+```{r Initialisieren, include=TRUE}
+  # aufräumen:
+    rm(list=ls())
+    gc()
+  # AIce einbinden:
+    source("aice/aice.R")
+  # AIce-Objekt erstellen; und Daten laden:
+    mein_aice <- aice.rc$new(TRUE)
+```
+
+### **Datumsfilter setzen:**
+
+```{r Filter setzen, include = TRUE}
+  # Parameter definieren:
+    JAHR     <- 2025
+    datRange <- paste0("01.01.",(JAHR-1),":","31.12.", JAHR)
+  #
+  # NULL-ASel-Objekt zum filtern erstellen: 
+    fltr_asel <- asel.rc$new() # gleichbed.:  asel.rc$new(NULL), asel.rc$new(NA)  
+  #
+  # Datumsfilter definieren:
+    fltr_asel$addSepa("DATU", datRange)
+  #
+  # Filter setzen: 
+  # Da keine GRUA im ASel festgelegt ist, wird der Filter für alle GRUAs gesetzt:
+    mein_aice$setFltr(fltr_asel)
+```
+
+### **In 'bb' via abgespeichertem Selektionsansatz selektieren:**
+
+#### **Sample-Selektionsansatz laden und anschauen; dann damit selektieren:**
+
+```{r}
+  # ASel erzeugen und Selektionsansatz per Open_Dialog laden:
+    sample_asel <- asel.rc$new("")
+  # ASel erzeugen und Selektionsansatz per Hand laden:
+    sample_asel <- asel.rc$new("aice/data/Selektionsansaetze/Testansatz_bb.csv")
+  # geladenen Ansatz anschauen:
+    sample_asel$prtSela()
+  # via Ansatz selektieren:
+    df <- mein_aice$select(sample_asel)
+```
+
+#### Sample-Selektionsansatz via Open-Dialog auswählen und gleichzeitig damit selektieren:
+
+```{r}
+df <- mein_aice$select()
+```
+
+### **Per Hand in der Grundstücksart "bb" selektieren:**
+
+#### **Wo wurde bei der Erfassung *SW23* in das falsche WEIA-Feld eingetragen?**
+
+```{r}
+# Datumsfilter entfernen:
+  mein_aice$rmvFltr()
+#
+# Neues ASel erstellen und die GRUA "bb" zuweisen:
+  mein_asel <- asel.rc$new("bb")
+# 
+# Kauffälle, die irgendwo in WEIA den Teilstring "SW23" stehen haben:
+  mein_asel$addSepa("WEIA", "*SW23*")
+# Kauffälle, die NICHT in WEIA7 den Teilstring "SW23" stehen haben:
+  mein_asel$addSepa("WEIA7", "<>(*SW23*)")
+#
+# Wie man sieht, wurden 2 Kriterien (Sepas) festgelegt:
+  mein_asel$prtSela()
+#
+# Diese werden nun von AIce via 'UND' verknüpft: 
+  df_SW23_diff <- mein_aice$select(mein_asel)
+# Treffer ausgeben:
+  ndiff <- nrow(df_SW23_diff)
+  if (ndiff == 0) {
+    print("Alles ist gut.")
+  } else {
+    print(paste0("Es wurde ", ndiff, " mal 'SW23' in das falsche WEIA-Feld eingetragen; und zwar in den folgenden Kauffällen:"))
+    print(df_SW23_diff$KFKZ)
+  }
+
+```
+
+### **Datenwartung:**
+
+#### **Fehlbelegungen via falschem Datentyp:**
+
+Gibt diejenigen Kauffälle samt Feldern aus, bei denen ein Typecast-NA-Fehler auftritt:
+
+```{r}
+ mein_aice$checkData(GRUAS = NA, FILTER = TRUE)
+```
+
+#### **checkWrongs(...):**
+
+Gibt Fehlselektionen mit Selektionsinformationen aus (wo ist es schiefgegangen?):
+
+```{r}
+  suppressMessages(mein_aice$setFltr(fltr_asel))
+  #
+  SW23aselKrit <- asel.rc$new("aice/data/Selektionsansaetze/SW23_notwendig_bb.csv")
+  mein_aice$checkWrongs(SW23aselKrit)
+  #
+  #
+# fancier Schreibweise mit Pipe-Operator:
+  path <- "aice/data/Selektionsansaetze/SW23_notwendig_bb.csv"
+  asel.rc$new(path) |>  mein_aice$checkWrongs()
+  #
+  suppressMessages(mein_aice$rmvFltr())
+```
+
+### **Beispiel \~ Belegungskriterien KPS_Erf-RL 2026:**
+
+<https://bravors.brandenburg.de/sixcms/media.php/66/07_2026_KPSErf-RL_Anlage1_Elem_SW.pdf>
+
+#### **Wo ist nicht gleichzeitig: ("SW10" !) & (*SW23* in WEIA7):**
+
+```{r}
+## Bei welchen KFs ist *SW23* in WEIA7 eingetragen, aber SW10 ist nicht belegt.:
+asel <- asel.rc$new("bb")
+asel$addSepa("SW10", "=")
+asel$addSepa("WEIA7", "*SW23*")
+out_1 <- mein_aice$select(asel) |> mein_aice$pick(vIKs = c("KFKZ","WEIA7","SW10"), grua = "bb", TPCST = FALSE)
+#
+## Bei welchen KFs ist SW10 belegt, aber *SW23* nicht in WEIA7 eingetragen:
+asel$purge()
+asel$addSepa("SW10", "!")
+asel$addSepa("WEIA7", "=")
+out_2 <- mein_aice$select(asel) |> mein_aice$pick(vIKs = c("KFKZ","WEIA7","SW10"), grua = "bb", TPCST = FALSE)
+#
+## zusammentackern:
+output <- rbind(out_1,out_2)
+output
+```
+
+**Zunächst obige Kauffälle überprüfen, dann hiermit fortfahren:**
+
+#### **Bei welchen Kauffällen sind nicht erfüllt \~ Belegungskriterien KPS_Erf-RL 2026**
+
+```{r}
+mein_aice$rmvFltr("bb")
+#
+SW10_fltr_asel <- asel.rc$new("bb")
+SW10_fltr_asel$addSepa("SW10", "!")
+SW10_fltr_asel$addSepa("WEIA7", "SW23")
+mein_aice$setFltr(SW10_fltr_asel)
+#
+SW23aselKrit <- asel.rc$new("aice/data/Selektionsansaetze/SW23_notwendig_bb.csv")
+# !
+output <- mein_aice$checkWrongs(SW23aselKrit)
+# !                 -----------    
+output
+```
