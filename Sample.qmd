@@ -106,7 +106,7 @@ df <- mein_aice$select()
 Gibt diejenigen Kauffälle samt Feldern aus, bei denen ein Typecast-NA-Fehler auftritt:
 
 ```{r}
- mein_aice$checkData(GRUAS = NA, FILTER = TRUE)
+ mein_aice$checkData(GRUAS = NA, FLTR = TRUE)
 ```
 
 #### **checkWrongs(...):**
