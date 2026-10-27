@@ -33,7 +33,7 @@ aice_load_data <- function(.self, pathKaufDat = "", NoGhosts = FALSE, TypeRepair
     # Suche alle Exporte in der Kategorie grua, und waehle denjenigen mit dem juengsten Aenderungsdatum:
       tmp_Nms <- filenames[grep(grua, filenames)]
     file_Info <- file.info(paste0(pathKaufDat, "/", tmp_Nms))
-     filename <- rownames(file_Info)[which.min(file_Info$mtime)]
+     filename <- rownames(file_Info)[which.max(file_Info$mtime)]
     #
     KFdata[[grua]] <- read.table(filename,
                                  colClasses = "character",
