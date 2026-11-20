@@ -221,8 +221,8 @@ asel.rc <- setRefClass(
         return(NULL)
       }
       if (class(Obj) == "AKS_Selektionsansatz") {
-        if (.self$getGrua() != Obj$getGrua()) {
-          message(paste0("asel.rc$merge: Unterschiedliche Grundstücksarten: .self hat GRUA '", .self$getGrua()," (beibehalten)' | Integrand hat GRUA '", Obj$getGrua(),"' (ignoriert)"))
+        if (!meta_cmp_gruas(.self$getGrua(SILENT = TRUE), Obj$getGrua(SILENT = TRUE))) {
+          message(paste0("asel.rc$merge: Unterschiedliche Grundstücksarten: .self hat GRUA '", .self$getGrua(SILENT = TRUE)," (beibehalten)' | Integrand hat GRUA '", Obj$getGrua(SILENT = TRUE),"' (ignoriert)"))
         }
        .self$ObAsp.lst <- append(.self$ObAsp.lst, Obj$ObAsp.lst)
       } else if (class(Obj) == "data.frame") {
