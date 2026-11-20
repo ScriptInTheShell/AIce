@@ -61,3 +61,15 @@
       return(label %in% TYPE)
     }
   }
+  #
+  meta_cmp_gruas = function(grua1 = NA_character_, grua2 = NA_character_) {
+    if (is.na(grua1) & is.na(grua2)) {
+      return(TRUE)
+    } else if (is.na(grua1) | is.na(grua2)) {
+      return(FALSE) 
+    } else if (grua1 == grua2) {
+      return(TRUE)
+    } else {
+      return(FALSE)      
+    }
+  }
