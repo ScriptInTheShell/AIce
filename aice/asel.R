@@ -182,7 +182,10 @@ asel.rc <- setRefClass(
         }
       } else {
         # Wenn 'NULL' uebergeben, dann klonen ~ alle Indizes:
-        vInds <- 1:.self$nObAsp.int
+        vInds <- NULL
+        if (.self$nObAsp.int > 0) {
+          vInds <- 1:.self$nObAsp.int
+        }
       }
       # Neues ASel erschaffen, und Metadaten kopieren:
       # Copy on modify hier unschaedlich:
@@ -194,11 +197,13 @@ asel.rc <- setRefClass(
       # wirklich kopiert - zwar verhalten sich die Objekte dann bei updtSepa() wie 
       # getrennte Objekte, aber bei brute-force-Zuweisungen in den Felder nicht mehr so sehr ... .
       # Man koennte hier convert aus asp.rc$initialize rausnehmen, und dann asp.rc$copy(...) benutzen;
-      # das will ich aber nicht.     
-      for (ind in vInds) {  
-        tmpKB       <- .self$ObAsp.lst[[ind]]$Meta.lst$ID.lst$vKB[1]
-        tmpInputStr <- .self$ObAsp.lst[[ind]]$Meta.lst$PrtSTR
-        ret_asel$addSepa(tmpKB, tmpInputStr)
+      # das will ich aber nicht.
+      if (!is.null(vInds)) {
+        for (ind in vInds) {  
+          tmpKB       <- .self$ObAsp.lst[[ind]]$Meta.lst$ID.lst$vKB[1]
+          tmpInputStr <- .self$ObAsp.lst[[ind]]$Meta.lst$PrtSTR
+          ret_asel$addSepa(tmpKB, tmpInputStr)
+        }
       }
       #
       return(ret_asel)
