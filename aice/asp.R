@@ -9,7 +9,7 @@
 # -------------------------                          
 # AKS-SELEKTIONSPARAMETER |
 #-------------------------
-# Version:      1.0.3-beta
+# Version:      1.0.3b-beta
 # Author:       Dr. Maximilian Hanusch
 # Maintainer:   Dr. Maximilian Hanusch  ~  "maximilian.hanusch@lkprignitz.de"
 #
